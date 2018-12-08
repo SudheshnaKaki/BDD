@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Form</title>
+<script type="text/javascript">
+function chkEmpty(){
+	var name=/^[A-Za-z]{3,20}$/;
+	var mob = /^[7-9]{1}[0-9]{9}$/;
+	var email=/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
+		
+	if (document.frmReg.name.value == "") {alert("Please fill the Name");}
+	else if(name.test(document.frmReg.name.value) == false) {alert("Please enter valid Name");}
+	else if (document.frmReg.mobilenumber.value == "") {alert("Please fill the Mobile No.");}
+	else if (mob.test(document.frmReg.mobilenumber.value) == false) { alert("Please enter valid Contact no.");}
+	else if (document.frmReg.mail.value == ""){alert("Please fill the Email");}
+	else if (email.test(document.frmReg.mail.value) == false) { alert("Please enter valid Email Id.");}
+	else if (document.frmReg.address.value=="") { alert("Please enter valid address");}
+	
+		else {
+		alert("Registered Successfully");
+		}
+	}
+</script>
+</head>
+<body>
+<h1 align="center">Registration Form</h1>
+<form name="frmReg">
+<table border="1" align="center">
+<tr>
+<td>Name</td>
+<td><input type="text" name="name" pattern="^[A-Za-z]{3,20}$"></td>
+</tr>
+
+<tr>
+<td>Mobile</td>
+<td><input type="number" id="txnPh"  name="mobilenumber" pattern="[6-9][0-9][10]"></td>
+</tr>
+
+<tr>
+<td>Mail</td>
+<td><input type="text" id="txnEmail" name="mail" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"></td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td><input type="radio" id="mG" name="gender" value="male"checked="checked">male</td>
+<td><input type="radio" id="fG" name="gender" value="female">female</td>
+</tr>
+
+<tr>
+<td>Address</td>
+<td><textarea rows="5" columns="2" name="address"></textarea></td>
+</tr>
+     <td align="center" colspan="2"><input type="button" value="submit" onclick="chkEmpty()"></td>
+</table>
+</form>
+</body>
+</html>f
